@@ -11,3 +11,15 @@ Expers is a mobile app that makes this process simple by using Automatic Questio
 A learner can take pictures of the material, select a document or search online for the topic from the app then it will generate a set of questions. The Application will generate questions in a way that is mindful of the context in which the generated questions are effective and pedagogically-useful questions. The Application will use deep learning for extracting the text from the pictures taken by the learner by using optical character recognition. Learners can see their overall performance and can review their answers next to the exact answers in the application.
 
  	Automatic question generation (QG) is a very important yet challenging problem in NLP.
+
+# Installation
+```
+pip install --upgrade pip
+
+pip install -U transformers==3.0.0
+
+python -m nltk.downloader punkt
+
+pip install torchvision 
+```
+Run QuestionGenration Notebook

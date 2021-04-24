@@ -3,8 +3,13 @@ import os
 from . import pipelines
 
 app = Flask(__name__)
+nlp = None
 
-nlp = pipelines.pipeline("multitask-qa-qg", model="valhalla/t5-base-qa-qg-hl")
+
+@app.before_first_request
+def nlpdefine():
+    global nlp
+    nlp = pipelines.pipeline("multitask-qa-qg")
 
 
 @app.route('/hello')

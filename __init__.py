@@ -1,6 +1,6 @@
 from flask import Flask, request, abort, jsonify
 import os
-from . import pipelines
+from pipelines import pipeline
 
 app = Flask(__name__)
 nlp = None
@@ -9,7 +9,7 @@ nlp = None
 @app.before_first_request
 def nlpdefine():
     global nlp
-    nlp = pipelines.pipeline("multitask-qa-qg")
+    nlp = pipeline("question-generation")
 
 
 @app.route('/hello')
